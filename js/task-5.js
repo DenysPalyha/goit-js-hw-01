@@ -1,36 +1,40 @@
 let prise;
 
-let country = prompt('Заказ доставки!');
+let country = prompt("Заказ доставки!");
 if (country !== null) {
   country = country.toLowerCase();
 }
 
 switch (country) {
-  case 'китай':
+  case "китай":
     prise = 100;
-    alert(`Доставка в ${country} будет стоить ${prise} кредитов`);
     break;
 
-  case 'чили':
+  case "чили":
     prise = 250;
-    alert(`Доставка в ${country} будет стоить ${prise} кредитов`);
     break;
 
-  case 'австралия':
+  case "австралия":
     prise = 170;
-    alert(`Доставка в ${country} будет стоить ${prise} кредитов`);
     break;
 
-  case 'индия':
+  case "индия":
     prise = 80;
-    alert(`Доставка в ${country} будет стоить ${prise} кредитов`);
     break;
 
-  case 'ямайка':
+  case "ямайка":
     prise = 120;
-    alert(`Доставка в ${country} будет стоить ${prise} кредитов`);
     break;
 
   default:
-    alert('В вашей стране доставка не доступна');
+    prise = -1;
 }
+
+if (prise !== -1) {
+  country = country.charAt(0).toUpperCase() + country.substr(1).toLowerCase();
+  alert(`Доставка в ${country} будет стоить ${prise} кредитов`);
+} else {
+  alert("В вашей стране доставка не доступна");
+}
+
+
